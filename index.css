@@ -243,7 +243,7 @@ h3{
 
 .todo-form{
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 30%;
   margin: 1rem auto;
   padding: 20px;
@@ -309,16 +309,19 @@ h5{
 
 .modal .action {
   border-radius: 6px;
-  box-shadow: 0 2px 6px -2px black;
   cursor: pointer;
+  user-select: none;
+  background: rgba(0, 0, 0, 1);
+  color: whitesmoke;
+  margin: 1rem;
+  padding: 5px;
 }
 
 .modal .action span {
   margin-left: 6px;
   font-weight: bold;
   letter-spacing: 1.1;
-  text-transform: uppercase;
-  color: black;
+  color: whitesmoke;
 }
 
 
