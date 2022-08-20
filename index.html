@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title> Todo App </title>
+  <link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Tomorrow|Noto+Sans&display=swap" rel="stylesheet">   
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"  />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script defer src="index.js"></script>
+
+
+</head>
+
+<div class="watermark">
+    <h1> TODO.APP</h1>
+  </div>
+
+
+
+<img id="homer" src="https://faribucket.s3.amazonaws.com/My+project-1+(37).png" alt="" />
+
+
+
+
+<div class="app">
+  
+     
+  <div class="menu-options">
+    <div id="buttons">
+   <button class="btn" id="addNote" onClick ="openForm();"><i class="fa fa-plus-circle" aria-hidden="true"></i><h5>Create New</h5></button>
+   
+   <button class="btn" onClick="removeAllCompleted();"><i class="fa fa-check-square" aria-hidden="true"></i><h5>Remove Completed</h5></button>
+   
+   <button class="btn" onClick ="removeExpired();"><i class="fa fa-trash" aria-hidden="true"></i><h5>Remove Expired</h5></button>
+    </div>
+  
+</div>
+
+    
+  <div class="Pending" id="Pending">
+    <h3> Pending Todos</h3> 
+     <div class ="content"></div>
+  </div>
+  
+  
+  <div class="Completed">
+    <h3> Completed Todos</h3>
+     <div class ="content"></div>
+    </div>
+    
+  <div class="Expired">
+    <h3> Expired Todos</h3> 
+      <div class ="content"></div>
+  </div> 
+
+</div>
+
+<div class="modal">
+<form class="todo-form">
+  
+            <label for="todo-title">Todo Title</label>
+            <input type="text" id="todo-title" required />
+            <h5>This is a required field</h5>
+  
+            <label for="todo-due-date">Due Date</label>
+            <input type="date" id="todo-due-date" required />
+            <h5>This is a required field</h5>
+  
+  <label for="todo-title">Todo Time</label>
+      <input type="time" id="todo-due-time" required />
+       <h5>This is a required field</h5>
+  
+            <label for="todo-description">Description</label>
+            <textarea id="todo-description" columns="40" rows="5"></textarea>
+            <div class="actions">
+              <button class="action create-todo when-valid">
+                <i class="material-icons">add_circle</i>
+                <span class="action-text">Create</span>
+              </button>
+              <button disabled class="action create-todo when-invalid">
+                <i class="material-icons">add_circle</i>
+                <span class="action-text">Create</span>
+              </button>
+              <button onClick="closeForm();" class="action cancel-create-todo">
+                <i class="material-icons">cancel</i>
+                <span class="action-text">Cancel</span>
+              </button>
+            </div>
+          </form>
+  
+</div>
+
+</html>
+
+
+
+
+
+
+
+
