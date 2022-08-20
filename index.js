@@ -126,7 +126,7 @@ async function renderTodos() {
       doneTodo[0].isComplete = true;
       newData = getTodos;
       localStorage.setItem("allTodos", JSON.stringify(newData));
-      updateTodos();
+      _getTodos();
     });
 
     $(todoTask).on("click", ".fa-trash", function(){
@@ -138,7 +138,7 @@ async function renderTodos() {
       getTodos.splice(removingTodo, 1);
       newData = getTodos;
       localStorage.setItem("allTodos", JSON.stringify(newData));
-      updateTodos();
+      _getTodos();
     });
   });
 
@@ -177,7 +177,7 @@ async function renderTodos() {
       getTodos.splice(removingTodo, 1);
       newData = getTodos;
       localStorage.setItem("allTodos", JSON.stringify(newData));
-      updateTodos();
+      _getTodos();
     });
   });
 
@@ -217,7 +217,7 @@ async function renderTodos() {
       doneTodo[0].isComplete = true;
       newData = getTodos;
       localStorage.setItem("allTodos", JSON.stringify(newData));
-         updateTodos();
+      _getTodos();
     });
 
     $(todoTask).on("click", ".fa-trash", function() {
@@ -229,7 +229,7 @@ async function renderTodos() {
       getTodos.splice(removingTodo, 1);
       newData = getTodos;
       localStorage.setItem("allTodos", JSON.stringify(newData));
-      updateTodos();
+      _getTodos();
     });
   });
 }
