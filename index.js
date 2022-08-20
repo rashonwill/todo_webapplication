@@ -60,10 +60,6 @@ function _getTodos() {
   }
 }
 
-async function updateTodos() {
-  console.log('...updating')
-  splitTodos().then(renderTodos);
-}
 
 function isCurrent(todo) {
   const todoDueDate = new Date(todo.dueDate);
@@ -259,7 +255,7 @@ $(".create-todo").click(function () {
 
   $(".todo-form").removeClass("active");
 
-  updateTodos();
+  _getTodos();
 });
 
 function removeAllCompleted() {
