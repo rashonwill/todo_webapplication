@@ -249,26 +249,25 @@ h3{
 }
 
 
-.todo-form{
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  margin: 1rem auto;
-  padding: 20px;
-  width: 40%;
-  height: 600px;
-  font-size: 30px;
-  background: black;
-  color: white;
-  opacity: .9;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: scale(0);
-  border-radius: 10px;
- 
+.todo-form {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    margin: 1rem auto;
+    padding: 20px;
+    width: 45%;
+    height: 600px;
+    font-size: 30px;
+    background: black;
+    color: white;
+    opacity: .9;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    border-radius: 10px;
 }
 
 .todo-form.active{
@@ -300,6 +299,7 @@ textarea{
   font-size: 16px;
   font-weight: bold;
   border-radius: 15px;
+  outline: none;
 }
 
 h5{
