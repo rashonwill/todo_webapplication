@@ -12,6 +12,10 @@ body{
   background:black;
   height: auto;
   width: auto;
+  background-color:hsla(0,0%,0%,1);
+background-image:
+radial-gradient(at 80% 100%, hsla(206,70%,69%,0.43) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(206,70%,69%,0.36) 0px, transparent 50%); 
 }
 
 body::-webkit-scrollbar{
@@ -48,6 +52,7 @@ background: transparent;
   -moz-transform: rotatoe(-45deg);
   margin: 1rem auto;
   opacity: .1;
+  display: none; 
 }
 
 
