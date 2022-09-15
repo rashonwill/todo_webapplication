@@ -50,18 +50,12 @@ background: transparent;
   opacity: .1;
 }
 
-#homer{
-  width: 30rem;  
-  height: 20rem;
-  position: absolute;
-  top: -5%;
-  left: 5%;
-}
+
 
 
 .app{
   width: 75rem;
-  height: 42rem;
+  height: 45rem;
   margin: 7rem auto;
   display: flex;
   background: rgba(255, 255, 255, 0.1);
@@ -70,7 +64,17 @@ background: transparent;
   border-radius: 20px;
   box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.5);
   z-index: 10;
+ position: relative; 
 }
+
+#homer{
+  width: 30rem;  
+  height: 20rem;
+  position: absolute;
+  top: -5%;
+  left: 5%;
+}
+
 
 .menu-options{
   width: 60px;
