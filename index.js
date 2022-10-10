@@ -90,27 +90,32 @@ async function renderTodos() {
 
   pendingTodos.forEach(function (todo) {
     let todoTask = $(`
-<div class="todo">
+    <div class="todo">
+    
+    <div class="todo-options">
+    <i class="fa-solid fa-ellipsis"></i>
+    <ul class="options">
+    <li id="complete"><i class="fa-solid fa-circle-check"></i>Complete</li>
+    <li id="trash"><i class="fa-solid fa-circle-xmark"></i>Trash</li>
+    </ul>
+    </div>
+
+
     <div class="top">
     <p>${todo.title} <br> ${todo.dueDate} ${todo.dueTime} </p>
-    
     </div>
     
     <div class="note">
     <p> ${todo.Description}</p>
     </div>
     
-    <div class="bottom">
-    <i class="fa-solid fa-trash"></i>
-    <i class="fa-solid fa-circle-check"></i>
-    </div>
     
     </div>  
     
      `).data("todo", todo);
     $(".Pending .content").append(todoTask);
 
-    $(todoTask).on("click", ".fa-circle-check", function(){
+    $(todoTask).on("click", "#complete", function(){
       let task = $(this).closest(".todo").data("todo");
       let taskID = task.id;
       let getTodos = JSON.parse(localStorage.getItem("allTodos"));
@@ -125,7 +130,7 @@ async function renderTodos() {
       _getTodos();
     });
 
-    $(todoTask).on("click", ".fa-trash", function(){
+    $(todoTask).on("click", "#trash", function(){
       let task = $(this).closest(".todo").data("todo");
       let taskID = task.id;
       let getTodos = JSON.parse(localStorage.getItem("allTodos"));
@@ -136,23 +141,31 @@ async function renderTodos() {
       localStorage.setItem("allTodos", JSON.stringify(newData));
       _getTodos();
     });
+    
+     $(todoTask).on("click", ".fa-ellipsis", function(){
+       $(this).parent().find(".options").toggleClass("active");
+    });
   });
 
   completedTodos.forEach(function (todo) {
     let todoTask = $(`
-<div class="todo">
+    <div class="todo">
+
+    <div class="todo-options">
+    <i class="fa-solid fa-ellipsis"></i>
+    <ul class="options">
+    <li id="trash"><i class="fa-solid fa-circle-xmark"></i>Trash</li>
+    </ul>
+    </div>
+    
     <div class="top">
     <p>${todo.title} <br> ${todo.dueDate} ${todo.dueTime} </p>
-    
     </div>
     
     <div class="note">
     <p> ${todo.Description}</p>
     </div>
     
-    <div class="bottom">
-    <i class="fa-solid fa-trash"></i>
-    </div>
     
     </div>  
     
@@ -160,11 +173,11 @@ async function renderTodos() {
     $(".Completed .content").append(todoTask);
     $(".Completed .todo .top").css("background", "#00FA9A");
     $(".Completed .todo .note").css("background", "#00FA9A");
-    $(".Completed .todo .bottom").css("background", "#00FA9A");
+    $(".Completed .todo .todo-options").css("background", "#00FA9A");
     $(".Completed .action.complete").remove();
     
 
-    $(todoTask).on("click", ".fa-trash", function() {
+    $(todoTask).on("click", "#trash", function() {
       let task = $(this).closest(".todo").data("todo");
       let taskID = task.id;
       let getTodos = JSON.parse(localStorage.getItem("allTodos"));
@@ -175,24 +188,32 @@ async function renderTodos() {
       localStorage.setItem("allTodos", JSON.stringify(newData));
       _getTodos();
     });
+    
+      $(todoTask).on("click", ".fa-ellipsis", function(){
+       $(this).parent().find(".options").toggleClass("active");
+    });
   });
 
   expiredTodos.forEach(function (todo, index) {
     let todoTask = $(`
-<div class="todo">
+    <div class="todo">
+
+    <div class="todo-options">
+    <i class="fa-solid fa-ellipsis"></i>
+    <ul class="options">
+    <li id="complete"><i class="fa-solid fa-circle-check"></i>Complete</li>
+    <li id="trash"><i class="fa-solid fa-circle-xmark"></i>Trash</li>
+    </ul>
+     </div>
+
     <div class="top">
     <p>${todo.title} <br> ${todo.dueDate} ${todo.dueTime} </p>
-    
     </div>
     
     <div class="note">
     <p> ${todo.Description}</p>
     </div>
     
-    <div class="bottom">
-<i class="fa-solid fa-trash"></i>
-    <i class="fa-solid fa-circle-check"></i>
-    </div>
     
     </div>  
     
@@ -200,9 +221,9 @@ async function renderTodos() {
     $(".Expired .content").append(todoTask);
     $(".Expired .todo .top").css("background", "#ff86a4");
     $(".Expired .todo .note").css("background", "#ff86a4");
-    $(".Expired .todo .bottom").css("background", "#ff86a4");
+    $(".Expired .todo .todo-options").css("background", "#ff86a4");
     
-        $(todoTask).on("click", ".fa-circle-check", function(){
+        $(todoTask).on("click", "#complete", function(){
       let task = $(this).closest(".todo").data("todo");
       let taskID = task.id;
       let getTodos = JSON.parse(localStorage.getItem("allTodos"));
@@ -216,7 +237,7 @@ async function renderTodos() {
       _getTodos();
     });
 
-    $(todoTask).on("click", ".fa-trash", function() {
+    $(todoTask).on("click", "#trash", function() {
       let task = $(this).closest(".todo").data("todo");
       let taskID = task.id;
       let getTodos = JSON.parse(localStorage.getItem("allTodos"));
@@ -226,6 +247,10 @@ async function renderTodos() {
       newData = getTodos;
       localStorage.setItem("allTodos", JSON.stringify(newData));
       _getTodos();
+    });
+    
+        $(todoTask).on("click", ".fa-ellipsis", function(){
+       $(this).parent().find(".options").toggleClass("active");
     });
   });
 }
