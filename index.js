@@ -102,7 +102,7 @@ async function renderTodos() {
 
 
     <div class="top">
-    <p>${todo.title} <br> ${todo.dueDate} ${todo.dueTime} </p>
+    <p>${todo.dueDate} ${todo.dueTime} <br> ${todo.title} </p>
     </div>
     
     <div class="note">
@@ -159,7 +159,7 @@ async function renderTodos() {
     </div>
     
     <div class="top">
-    <p>${todo.title} <br> ${todo.dueDate} ${todo.dueTime} </p>
+    <p> ${todo.dueDate} ${todo.dueTime} <br> ${todo.title} </p>
     </div>
     
     <div class="note">
@@ -207,7 +207,7 @@ async function renderTodos() {
      </div>
 
     <div class="top">
-    <p>${todo.title} <br> ${todo.dueDate} ${todo.dueTime} </p>
+    <p>${todo.dueDate} ${todo.dueTime} <br> ${todo.title} </p>
     </div>
     
     <div class="note">
