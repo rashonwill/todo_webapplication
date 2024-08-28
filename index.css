@@ -235,6 +235,10 @@ h3{
   
 }
 
+.dates{
+  font-size: 12px;
+}
+
 .todo-options{
   height: 10%;
   background: #fff000;
